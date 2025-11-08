@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Home.css";
 import Navbar from "./navbar";
+import { CartContext } from "../context/CartContext";  // ✅ import context
 
 import tshirt from "../assest/t-shirt.jpg";
 import jacket from "../assest/jackets.jpg";
 import hoodie from "../assest/hoodies.jpg";
 
 const Home = () => {
+  const { addToCart } = useContext(CartContext);  // ✅ get addToCart function
+
   const products = [
     { id: 1, name: "Classic White T-Shirt", price: "₹499", image: tshirt },
     { id: 2, name: "Denim Jacket", price: "₹1299", image: jacket },
@@ -24,7 +27,7 @@ const Home = () => {
               <img src={item.image} alt={item.name} />
               <h3>{item.name}</h3>
               <p className="price">{item.price}</p>
-              <button>Add to Cart</button>
+              <button onClick={() => addToCart(item)}>Add to Cart</button> {/* ✅ fixed */}
             </div>
           ))}
         </div>
