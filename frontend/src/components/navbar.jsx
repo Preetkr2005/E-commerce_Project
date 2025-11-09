@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
-import cartImg from "../assest/carts.png"; // import your cart image
+import "./navbar.css";
+import cartImg from "../assest/carts.png";
 
 const Navbar = () => {
   return (
@@ -10,7 +10,15 @@ const Navbar = () => {
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/shop">Shop</Link></li>
+    
+        <li className="dropdown">
+          <span className="dropdown-title">Shop</span>
+          <ul className="dropdown-menu">
+            <li><Link to="/shop/men">Men</Link></li>
+            <li><Link to="/shop/ladies">Ladies</Link></li>
+          </ul>
+        </li>
+
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>

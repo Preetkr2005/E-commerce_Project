@@ -1,64 +1,98 @@
-.home-container {
-  padding: 40px 20px;
-  background: #f8f8f8;
-  min-height: 100vh;
+.products-container {
+  padding: 50px 100px;
+  background: #fafafa;
+  text-align: center;
 }
 
-.home-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 28px;
-  color: #333;
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #111;
+  font-family: "Poppins", sans-serif;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
   justify-content: center;
 }
 
 .product-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 15px;
-  transition: 0.3s;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.product-card img {
+.image-container {
+  position: relative;
   width: 100%;
-  height: 200px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  transition: transform 0.4s ease;
 }
 
-.product-card h3 {
-  margin: 10px 0 5px;
-  color: #333;
+.product-card:hover img {
+  transform: scale(1.05);
 }
 
-.price {
-  color: #00b894;
-  font-weight: bold;
-  margin-bottom: 10px;
+.hover-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.product-card button {
-  padding: 8px 12px;
-  background: #00b894;
-  color: white;
+.product-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+.add-btn {
+  background-color: #111;
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  padding: 10px 25px;
+  border-radius: 30px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
+  transition: background 0.3s;
 }
 
-.product-card button:hover {
-  background: #009970;
+.add-btn:hover {
+  background: #e63946;
+}
+
+.product-info {
+  padding: 15px 10px 25px;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.product-info p {
+  font-weight: 500;
+  color: #555;
 }

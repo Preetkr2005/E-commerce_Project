@@ -1,0 +1,83 @@
+.ladies-container {
+  padding: 60px 8%;
+  background-color: #fafafa;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Banner Section */
+.ladies-banner {
+  color: black;
+  text-align: center;
+
+}
+
+.ladies-banner h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ladies-banner p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Product Grid */
+.ladies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.ladies-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ladies-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.ladies-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Card Info */
+.ladies-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.ladies-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.ladies-info button {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ladies-info button:hover {
+  background-color: #0a84ff;
+}
