@@ -3,7 +3,6 @@ import "./LadiesShop.css";
 import Navbar from "./navbar";
 import { CartContext } from "../context/CartContext";
 
-// Import ladies product images
 import dress from "../assest/ladies/Dress.png";
 import top from "../assest/ladies/tops.png";
 import jeans from "../assest/ladies/jeans.png";

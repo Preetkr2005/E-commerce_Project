@@ -125,3 +125,38 @@
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 180px;
+  transition: 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #000;
+  width: 200px;
+}
+
+.search-bar button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #444;
+}
+
