@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend of ecom_project",
+  "homepage": "https://github.com/Preetkr2005/E-commerce_Project/tree/main#readme",
+  "bugs": {
+    "url": "https://github.com/Preetkr2005/E-commerce_Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Preetkr2005/E-commerce_Project.git#main"
+  },
+  "license": "ISC",
+  "author": "Preet, Ritika, Shubham",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.3"
+  }
+}
