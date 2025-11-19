@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 
 const Login = () => {
+  const navigate = useNavigate(); // <-- for redirect
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
 
     try {
       const res = await axios.post("http://localhost:5000/api/users/login", {
@@ -17,14 +19,15 @@ const Login = () => {
         password,
       });
 
-      alert("Login Successful!");
-      console.log("User Data:", res.data);
-
+      // Store the token so the user stays logged in
       localStorage.setItem("token", res.data.token);
+
+      alert(`Welcome back, ${res.data.user.name}!`);
+
+      // Redirect to Home page
+      navigate("/");
     } catch (err) {
-      setError(
-        err.response?.data?.message || "Login failed. Please try again."
-      );
+      alert(err.response?.data?.message || "Login failed");
     }
   };
 
@@ -32,8 +35,6 @@ const Login = () => {
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
-
-        {error && <p className="error-text">{error}</p>}
 
         <label>Email</label>
         <input
