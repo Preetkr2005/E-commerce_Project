@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
-  const navigate = useNavigate(); // <-- for redirect
+  const navigate = useNavigate(); 
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,12 +19,10 @@ const Login = () => {
         password,
       });
 
-      // Store the token so the user stays logged in
       localStorage.setItem("token", res.data.token);
 
-      alert(`Welcome back, ${res.data.user.name}!`);
+      alert(`Welcome back, ${res.data.user.name}!`);  
 
-      // Redirect to Home page
       navigate("/");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");

@@ -69,3 +69,18 @@
   color: #666;
   margin-top: 40px;
 }
+
+.add-to-cart-btn {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background: #333;
+}

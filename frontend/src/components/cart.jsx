@@ -6,7 +6,6 @@ import "./cart.css";
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
 
-  // ✅ Ensure prices are numbers before calculation
   const total = cart.reduce((sum, item) => {
     const numericPrice = parseInt(item.price);
     return sum + numericPrice * (item.quantity || 1);
@@ -28,7 +27,7 @@ const Cart = () => {
                 const subtotal = numericPrice * item.quantity;
 
                 return (
-                  <div key={item.id} className="cart-item">
+                  <div key={item._id} className="cart-item">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -39,21 +38,22 @@ const Cart = () => {
                       <h3>{item.name}</h3>
                       <p className="cart-price">₹{numericPrice}</p>
 
-                      {/* Quantity Selector */}
                       <div className="quantity-control">
                         <button
                           className="qty-btn"
                           onClick={() =>
-                            updateQuantity(item.id, item.quantity - 1)
+                            updateQuantity(item._id, item.quantity - 1)
                           }
                         >
                           −
                         </button>
+
                         <span className="qty-display">{item.quantity}</span>
+
                         <button
                           className="qty-btn"
                           onClick={() =>
-                            updateQuantity(item.id, item.quantity + 1)
+                            updateQuantity(item._id, item.quantity + 1)
                           }
                         >
                           +
@@ -65,7 +65,7 @@ const Cart = () => {
 
                     <button
                       className="remove-btn"
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item._id)}
                     >
                       🗑 Remove
                     </button>
